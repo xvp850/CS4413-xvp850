@@ -23,7 +23,7 @@ function runAjax(fname, lname) {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("ajaxCall").innerHTML = this.responseText;
       } else {
-        alert("Error " + this.readyState + "Occurred");
+        alert("Error " + this.readyState + " Occurred");
       }
   }
   /* Makes an AJAX request to "./ajax.php" using the GET method. */
