@@ -19,7 +19,7 @@ function runAjax(fname, lname) {
 
   //xhttp.onload = function() {
   //edit this
-  xhttp.onreadystatechange = function() {
+  xhttp.onload = function() {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("ajaxCall").innerHTML = this.responseText;
       } else {
