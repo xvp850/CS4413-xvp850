@@ -19,19 +19,32 @@ function runAjax(fname, lname) {
 
   //xhttp.onload = function() {
   //edit this
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("ajaxCall").innerHTML = this.responseText;
-      } else {
-        alert("Error " + this.readyState + " Occurred");
-      }
+  xhttp.onload = function() {
+    document.getElementById("responseString").innerHTML = this.responseText;
+    /*if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ajaxCall").innerHTML = this.responseText;
+    } else {
+      alert("Error " + this.readyState + " Occurred");
+    }
+    */
   }
   /* Makes an AJAX request to "./ajax.php" using the GET method. */
   //xhttp.open('GET', "ajax.php?fname=" + fname + "&lname=" + lname, true);
   xhttp.open('GET', "ajax.php", true);
   xhttp.send();
+  
+  //xhttp.onload = function() {
+  if(xhttp.status == 200) {
+    alert("Sucess");
+  } else {
+    alert("Error " + xhttp.readyState + " Occurred");
+  }
+  //}
+  /*
   if((typeof(responseString) == 'string')) {
     //xhttp.send(responseString);
+    document.getElementById("responseString") = xhttp.responseText;
   }
+  */
 }
 
