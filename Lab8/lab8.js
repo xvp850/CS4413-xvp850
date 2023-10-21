@@ -19,7 +19,7 @@ function runAjax(fname, lname) {
 
   //xhttp.onload = function() {
   //edit this
-  xhttp.onload = function() {
+  xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("ajaxCall").innerHTML = this.responseText;
       } else {
@@ -27,7 +27,8 @@ function runAjax(fname, lname) {
       }
   }
   /* Makes an AJAX request to "./ajax.php" using the GET method. */
-  xhttp.open('GET', "ajax.php?fname=" + fname + "&lname=" + lname, true);
+  //xhttp.open('GET', "ajax.php?fname=" + fname + "&lname=" + lname, true);
+  xhttp.open('GET', "ajax.php", true);
   xhttp.send();
   if((typeof(responseString) == 'string')) {
     //xhttp.send(responseString);
