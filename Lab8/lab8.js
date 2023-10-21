@@ -17,18 +17,19 @@ function runAjax(fname, lname) {
   
   const xhttp = new XMLHttpRequest();
 
-  xhttp.onload = function() {
-    //edit this
-    document.getElementById("ajaxCall").innerHTML = this.responseText;
+  //xhttp.onload = function() {
+  //edit this
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("ajaxCall").innerHTML = this.responseText;
+      } else {
+        alert("Error " + this.readyState + "Occurred");
+      }
   }
   /* Makes an AJAX request to "./ajax.php" using the GET method. */
-  xhttp.open("GET", "ajax.php?fname=" + fname + "&lname=" + lname, true);
-  //If the response from the AJAX call is #
-  //alert() the user with the text "Error n Occurred" where n is the number received from the AJAX response.
+  xhttp.open('GET', "ajax.php?fname=" + fname + "&lname=" + lname, true);
 
-  //If the response is a string, change the text of the paragraph element with the id "responseString".
   if((typeof(responseString) == 'string')) {
     xhttp.send(responseString);
   }
-  xhttp.send(responseString);
 }
