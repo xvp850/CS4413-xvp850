@@ -1,37 +1,33 @@
 
 function getDataFromForm() {
-  //Obtains the first name and last name from the form elements in index.html 
-  //Calls runAjax and sends the two strings as arguments
-  /* get the action attribute from the <form action=""> element */
-  var $form = $(this),
-    url = $form.attr('action');
+  /* Obtains the first name and last name from the form elements in index.html
+  * index.html was missing the Ids so I created a node list then parsed it
+  * Another option was to use [].map.call */
+ 
+  var inputList = document.querySelectorAll('input');
+  var nameArray = [];
+  for(var i = 0; i <= inputList.length-1; i++){
+    nameArray.push(inputList[i].value);
+  }
 
-  /* Send the data using post with element id name and name2*/
-  var posting = $.post(url, {
-    name: $('#name').val(),
-    name2: $('#name2').val()
-  });
-
-  /* Alerts the results */
-  posting.done(function(data) {
-    $('#result').text('success');
-  });
-  posting.fail(function() {
-    $('#result').text('failed');
-  });
-
-  //alert("it worked!");
-  alert('name' + 'name2');
+  runAjax(nameArray[0], nameArray[1])
 }
 
-//Create a function titled runAjax(fname, lname) that: 
 function runAjax(fname, lname) {
-  //Makes an AJAX request to "./ajax.php" using the GET method.
-  //The AJAX request should send the first and last names as a part of the request.
-
-  //If the response from the AJAX call is # alert() the user with
-  //the text "Error n Occurred" where n is the number received from the AJAX response.
   
-  //If the response is a string, change the text of the paragraph element with the id "responseString".
-}
+  const xhttp = new XMLHttpRequest();
 
+  xhttp.onload = function() {
+    //edit this
+    document.getElementById("ajaxCall").innerHTML = this.responseText;
+  }
+  /* Makes an AJAX request to "./ajax.php" using the GET method. */
+  xhttp.open("GET", "ajax.php?fname=" + fname + "&lname=" + lname, true);
+  //If the response from the AJAX call is #
+  //alert() the user with the text "Error n Occurred" where n is the number received from the AJAX response.
+
+  //If the response is a string, change the text of the paragraph element with the id "responseString".
+  if((typeof(responseString) == 'string')) {
+    xhttp.send(responseString);
+  }
+}
