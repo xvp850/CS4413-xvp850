@@ -28,8 +28,9 @@ function runAjax(fname, lname) {
   }
   /* Makes an AJAX request to "./ajax.php" using the GET method. */
   xhttp.open('GET', "ajax.php?fname=" + fname + "&lname=" + lname, true);
-
+  xhttp.send();
   if((typeof(responseString) == 'string')) {
-    xhttp.send(responseString);
+    //xhttp.send(responseString);
   }
 }
+
