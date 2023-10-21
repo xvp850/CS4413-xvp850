@@ -30,4 +30,5 @@ function runAjax(fname, lname) {
   if((typeof(responseString) == 'string')) {
     xhttp.send(responseString);
   }
+  xhttp.send(responseString);
 }
