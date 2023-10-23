@@ -34,7 +34,7 @@ function runAjax(fname, lname) {
   xhttp.send();
   
   //xhttp.onload = function() {
-  if(xhttp.status == 200) {
+  if(xhttp.status == 200 || xttp.readyState == 1) {
     alert("Sucess");
   } else {
     alert("Error " + xhttp.readyState + " Occurred");
