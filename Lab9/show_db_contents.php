@@ -4,9 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$db_host="project-db-instance.cwcsfmvjofus.us-east-2.rds.amazonaws.com";        //Change this
-$db_user="admin";        //Change this
-$db_pass="mypassword1";        //Change this
+$db_host="xvp850-mysql.mysql.database.azure.com";        //Change this
+$db_user="xvp850";        //Change this
+$db_pass="Mypassword1";        //Change this
 $db_name="z_url_set_1";     //Do not change
 
 $db_conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
