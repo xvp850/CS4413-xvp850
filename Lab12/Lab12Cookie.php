@@ -1,7 +1,7 @@
 <?php
 $cookieName = "cs4413";
 $cookieValue = "cs4413";
-setcookie($cookieName, $cookieValue, time() + (60), "/");
+setcookie($cookieName, $cookieValue, time() + (60), "/"); //Expires after 1 minute
 ?>
 <html>
     <head>
