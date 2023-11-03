@@ -1,29 +1,25 @@
 <?php 
-<table width="200" border-width="1">
-    <tr>
-        <td width="85">First Name</td>
-        <td width="99">Last Name</td>
-    </tr>
-//class readWriteModel {
-//    $file_handle = fopen("newfile.txt", "r");
-//    while (!feof($file_handle)) {
-//       $line = fgets($file_handle);
-//        echo $line;
-//        echo '<br>';
-//    }
-//    fclose($file_handle); 
-//}
-//readFile();
-$fileHandle = fopen("../Lab10Data.txt", "rb");
+echo "<table width="200" border="1">";
+echo "<tr>";
+echo "<td width="85">First Name</td>";
+echo "<td width="99">Last Name</td>";
+echo "</tr>";
 
-while (!feof($fileHandle) ) {
-    $line = fgets($fileHandle);
-    $nameParts = explode(' ', $line);
-    echo "<tr><td height='60'>$nameParts[0]</td><td>$nameParts[1]</td></tr>";
+$file = "../Lab10Data.txt";
+
+if(file_exists($file)) {
+    $fileHandle = fopen($file, "rb");
+
+    while (!feof($fileHandle) ) {
+        $line = fgets($fileHandle);
+        $nameParts = explode(' ', $line);
+        echo "<tr><td height='60'>$nameParts[0]</td><td>$nameParts[1]</td></tr>";
+    }
+    fclose($fileHandle);
+    echo "</table>";
+} else {
+    echo "No such file exists."
 }
-fclose($fileHandle);
-
-echo <a href="Lab10index.html">Index Page</a>;
-</table>
+echo "<a href="Lab10index.html">Index Page</a>";
 ?>
 
