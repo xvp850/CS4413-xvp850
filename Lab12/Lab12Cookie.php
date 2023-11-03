@@ -12,7 +12,7 @@ setcookie($cookieName, $cookieValue, time() + (60), "/"); //Expires after 1 minu
     <body>
 <?php
 if(!isset($_COOKIE[$cookieName])) {
-  echo "Cookie named '" . $cookieName . "' is not set."; //userTest
+  echo "Cookie named '" . $cookieName . "' is not set.<br>"; //userTest
   echo "Please refresh the page to set the cookie.";
 } else {
   echo "Cookie '" . $cookieName . "' is set.<br>"; //userTest
