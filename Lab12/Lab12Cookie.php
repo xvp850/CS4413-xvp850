@@ -1,6 +1,6 @@
 <?php
-$cookieName = "userTest";
-$cookieValue = "Jane Doe";
+$cookieName = "cs4413";
+$cookieValue = "cs4413";
 setcookie($cookieName, $cookieValue, time() + (60), "/");
 ?>
 <html>
