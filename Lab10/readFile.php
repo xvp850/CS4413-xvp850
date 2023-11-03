@@ -1,9 +1,9 @@
+<?php 
 <table width="200" border-width="1">
     <tr>
         <td width="85">First Name</td>
         <td width="99">Last Name</td>
     </tr>
-<?php 
 //class readWriteModel {
 //    $file_handle = fopen("newfile.txt", "r");
 //    while (!feof($file_handle)) {
@@ -24,7 +24,6 @@ while (!feof($fileHandle) ) {
 fclose($fileHandle);
 
 echo <a href="Lab10index.html">Index Page</a>;
-
-?>
 </table>
+?>
 
