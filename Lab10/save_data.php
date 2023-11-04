@@ -3,6 +3,13 @@ echo '<head><title>Lab 10 - save_data.php</title>';
 echo '<h1>Lab 10 - save_data.php</h1>';
 echo '<p>Name: John H. McCann IV (xvp850)</p><br/></head>';
 
+function buttonCall() {
+    echo '<br><form action="Lab10index.html">';
+    echo '<input type="submit" value="Go Back to Index"/></form>';
+    echo '<form action="readFile.php">';
+    echo '<input type="submit" value="Read File"/></form>';
+}
+
 $myfile = 'Lab10Data.txt';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,14 +25,4 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Invalid method. Data did not save successfully.';
     echo buttonCall();
 }
-
-//fclose($myfile);
-function buttonCall() {
-    echo '<br><form action="Lab10index.html">';
-    echo '<input type="submit" value="Go Back to Index"/></form>';
-    echo '<form action="readFile.php">';
-    echo '<input type="submit" value="Read File"/></form>';
-}
-//echo '<a href="Lab10index.html">Index Page</a>';
-//echo '<a href="readFile.php">Display file</a>';
 ?> 
