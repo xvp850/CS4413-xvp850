@@ -1,5 +1,5 @@
 <?php 
-echo "<table width="200" border="1">";
+/*echo "<table width="200" border="1">";
 echo "<tr>";
 echo "<td width="85">First Name</td>";
 echo "<td width="99">Last Name</td>";
@@ -20,6 +20,16 @@ if(file_exists($file)) {
 } else {
     echo "No such file exists."
 }
-echo "<a href="Lab10index.html">Index Page</a>";
+echo "<a href="Lab10index.html">Index Page</a>";*/
+
+$file = '../Lab10Data.txt';
+if(file_exists($file)) {
+    $fileData = file($file);
+    echo $fileData;
+} else {
+    echo 'File does not exist.';
+}    
 ?>
+
+
 
