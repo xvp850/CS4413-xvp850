@@ -1,9 +1,4 @@
-<?php 
-echo "<table width="200" border="1">";
-echo "<tr>";
-echo "<td width="85">First Name</td>";
-echo "<td width="99">Last Name</td>";
-echo "</tr>";
+<?php
 /*
 $file = "Lab10Data.txt";
 
