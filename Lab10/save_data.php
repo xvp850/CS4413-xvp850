@@ -12,15 +12,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     //fwrite($myfile, $fullName);
     file_put_contents($myfile, $fullName, FILE_APPEND);
     echo 'Data saved successfully.';
+    buttonCall();
 } else {
     echo 'Invalid method. Data did not save successfully.';
+    buttonCall();
 }
 
-fclose($myfile);
-echo '<form action="Lab10index.html">';
-echo '<input type="submit" value="Go Back to Index"/></form>';
-echo '<form action="readFile.php">';
-echo '<input type="submit" value="Read File"/></form>';
+//fclose($myfile);
+function buttonCall() {
+    echo '<form action="Lab10index.html">';
+    echo '<input type="submit" value="Go Back to Index"/></form>';
+    echo '<form action="readFile.php">';
+    echo '<input type="submit" value="Read File"/></form>';
+}
 //echo '<a href="Lab10index.html">Index Page</a>';
 //echo '<a href="readFile.php">Display file</a>';
 ?> 
