@@ -36,7 +36,9 @@ if(file_exists($file)) {
     echo '</table>';
 } else {
     echo 'File does not exist.';
-}    
+}
+echo '<form action="Lab10index.html">';
+echo '<input type="submit" value="Read File"/></form>'
 ?>
 
 
