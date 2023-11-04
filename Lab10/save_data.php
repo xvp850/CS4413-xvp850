@@ -1,9 +1,17 @@
 <?php
-$myfile = fopen("Lab10Data.txt", "w") or die("Unable to open file!");
+echo '<head>';
+echo '<title>Lab 10 - readFile.php</title>';
+echo '<h1>Lab 10 - readFile.php</h1>';
+echo '<p>Name: John H. McCann IV (xvp850)</p><br/>';
+echo '</head>';
 
-if(isset($_POST['saveName'])){
-    $fullName = $_POST['fname']." ".$_POST[‘lname’]."\n";
-    fwrite($myfile, $fullName);
+$myfile = 'Lab10Data.txt';
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $fullName = $_POST['fname'].' '.$_POST['lname'].'\n';
+    //fwrite($myfile, $fullName);
+    //Append
+    file_put_contents($myfile, $fullName, FILE_APPEND);
     echo 'Data saved successfully.';
 } else {
     echo 'Data did not save successfully.'
