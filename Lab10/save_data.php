@@ -8,15 +8,21 @@ $myfile = 'Lab10Data.txt';
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstName = $_POST['fname'] ?? '';
     $lastName = $_POST['lname'] ?? '';
-    $fullName = $firstName.' '.$lastName.'\n';
+    $fullName = $firstName.' '.$lastName."\n";
     //fwrite($myfile, $fullName);
     file_put_contents($myfile, $fullName, FILE_APPEND);
     echo 'Data saved successfully.';
+    echo '<form action="Lab10index.html">';
+    echo '<input type="submit" value="Go Back to Index"/></form>';
+    echo '<form action="readFile.php">';
+    echo '<input type="submit" value="Read File"/></form>';
     fclose($myfile);
-    buttonCall();
 } else {
     echo 'Invalid method. Data did not save successfully.';
-    buttonCall();
+    echo '<form action="Lab10index.html">';
+    echo '<input type="submit" value="Go Back to Index"/></form>';
+    echo '<form action="readFile.php">';
+    echo '<input type="submit" value="Read File"/></form>';
 }
 
 //fclose($myfile);
