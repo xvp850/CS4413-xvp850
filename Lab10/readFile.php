@@ -25,11 +25,9 @@ echo '</head>';
 $file = 'Lab10Data.txt';
 if(file_exists($file)) {
     $fileData = file($file);
-    echo "<table width="200" border="1">";
-    echo "<tr>";
-    echo "<td width="85">First Name</td>";
-    echo "<td width="99">Last Name</td>";
-    echo "</tr>";
+    echo '<table width="200" border="1">';
+    echo '<tr><td width="85">First Name</td>';
+    echo '<td width="99">Last Name</td></tr>';
     foreach($fileData as $fileLine) {
         $name = explode(' ', $fileLine);
         echo '<tr><td>'.$name[0].'</td></tr>';
