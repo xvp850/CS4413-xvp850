@@ -7,14 +7,15 @@ echo '</head>';
 
 $myfile = 'Lab10Data.txt';
 
-if(($_SERVER['REQUEST_METHOD'] === 'POST') && (file_exists($file))) {
-    $fullName = $_POST['fname'] ?? ''.' '.$_POST['lname'] ?? ''.'\n';
+if(($_SERVER['REQUEST_METHOD'] === 'POST')) {
+    $firstName = $_POST['fname'] ?? '';
+    $lastName = $_POST['fname'] ?? '';
+    $fullName = $firstName.' '.$lastName.'\n';
     //fwrite($myfile, $fullName);
-    //Append
     file_put_contents($myfile, $fullName, FILE_APPEND);
     echo 'Data saved successfully.';
 } else {
-    echo 'Data did not save successfully.'
+    echo 'Invalid method. Data did not save successfully.'
 }
 
 fclose($myfile);
