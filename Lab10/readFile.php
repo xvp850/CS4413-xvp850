@@ -22,7 +22,7 @@ if(file_exists($file)) {
 }
 echo "<a href="Lab10index.html">Index Page</a>";*/
 
-$file = '../Lab10Data.txt';
+$file = 'Lab10Data.txt';
 if(file_exists($file)) {
     $fileData = file($file);
     echo $fileData;
