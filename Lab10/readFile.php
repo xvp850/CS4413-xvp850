@@ -38,7 +38,7 @@ if(file_exists($file)) {
     echo 'File does not exist.';
 }
 echo '<form action="Lab10index.html">';
-echo '<input type="submit" value="Read File"/></form>'
+echo '<input type="submit" value="Go Back to Index"/></form>'
 ?>
 
 
