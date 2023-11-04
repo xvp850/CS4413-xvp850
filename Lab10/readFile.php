@@ -5,7 +5,7 @@ echo "<td width="85">First Name</td>";
 echo "<td width="99">Last Name</td>";
 echo "</tr>";
 
-$file = "/Lab10Data.txt";
+$file = "Lab10Data.txt";
 
 if(file_exists($file)) {
     $fileHandle = fopen($file, "rb");
