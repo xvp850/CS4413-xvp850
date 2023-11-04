@@ -7,7 +7,7 @@ echo '</head>';
 
 $myfile = 'Lab10Data.txt';
 
-if(($_SERVER['REQUEST_METHOD'] === 'POST')) {
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstName = $_POST['fname'] ?? '';
     $lastName = $_POST['fname'] ?? '';
     $fullName = $firstName.' '.$lastName.'\n';
