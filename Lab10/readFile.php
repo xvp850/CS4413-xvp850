@@ -25,7 +25,10 @@ echo "<a href="Lab10index.html">Index Page</a>";*/
 $file = 'Lab10Data.txt';
 if(file_exists($file)) {
     $fileData = file($file);
-    echo $fileData;
+    foreach($fileData as $fileLine) {
+        $name = explode(' ', $fileLine);
+        echo $name[0];
+    }
 } else {
     echo 'File does not exist.';
 }    
