@@ -7,8 +7,8 @@ echo '</head>';
 
 $myfile = 'Lab10Data.txt';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fullName = $_POST['fname'].' '.$_POST['lname'].'\n';
+if(($_SERVER['REQUEST_METHOD'] === 'POST') && (file_exists($file))) {
+    $fullName = $_POST['fname'] ?? ''.' '.$_POST['lname'] ?? ''.'\n';
     //fwrite($myfile, $fullName);
     //Append
     file_put_contents($myfile, $fullName, FILE_APPEND);
