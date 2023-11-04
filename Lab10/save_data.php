@@ -12,6 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     //fwrite($myfile, $fullName);
     file_put_contents($myfile, $fullName, FILE_APPEND);
     echo 'Data saved successfully.';
+    fclose($myfile);
     buttonCall();
 } else {
     echo 'Invalid method. Data did not save successfully.';
