@@ -1,5 +1,5 @@
 <?php
-$myfile = fopen("../Lab10Data.txt", "w") or die("Unable to open file!");
+$myfile = fopen("/Lab10Data.txt", "w") or die("Unable to open file!");
 
 if(isset($_POST['saveName'])){
     $fullName = $_POST['fname']." ".$_POST[‘lname’]."\n";
